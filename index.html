@@ -6,17 +6,26 @@
 
     <meta name="description" content="Missing 411 map" />
 
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico" />
+    <!--<link rel="icon" type="image/png" sizes="32x32" href="favicon.ico" />-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
     <link rel="stylesheet" href="style.css" />
     <meta name="theme-color" content="#000000" />
 
     <title>Missing 411 Map</title>
   </head>
   <body>
-    <div id="map"></div>
-    <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
-    <!-- Replace the value of the key parameter with your own API key. -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initMap"></script>
+    <div id="mapid"></div>
     <script src="script.js"></script>
   </body>
 </html>

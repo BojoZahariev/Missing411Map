@@ -1,26 +1,19 @@
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 4,
-    center: { lat: 49.840989, lng: -96.902942 }
-  });
+var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 
-  // Create an array of alphabetical characters used to label the markers.
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+  attribution:
+    'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+  maxZoom: 18,
+  id: 'mapbox/satellite-streets-v11',
+  tileSize: 512,
+  zoomOffset: -1,
+  accessToken: 'pk.eyJ1IjoiYm9qbzE5ODAiLCJhIjoiY2tmZTF1YTZ3MDBvejJ1cXZ5MnRsMmFlbyJ9.Oj8H9UBmf69qLHjmT2RlJw'
+}).addTo(mymap);
 
-  // Add some markers to the map.
-  // Note: The code uses the JavaScript Array.prototype.map() method to
-  // create an array of markers based on a given "locations" array.
-  // The map() method here has nothing to do with the Google Maps API.
-  var markers = locations.map(function(location, i) {
-    return new google.maps.Marker({
-      position: location.loc,
+var mark = L.marker([51.5, -0.09])
+  .addTo(mymap)
+  .bindPopup('This is 1');
 
-      title: location.tit
-    });
-  });
-
-  // Add a marker clusterer to manage the markers.
-  var markerCluster = new MarkerClusterer(map, markers, {
-    imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
-  });
-}
-var locations = [{ tit: 'Helo', loc: { lat: -31.56391, lng: 147.154312 } }];
+var mark2 = L.marker([52.7, -0.09])
+  .addTo(mymap)
+  .bindPopup('This is 2');
