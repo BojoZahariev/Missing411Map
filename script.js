@@ -1,4 +1,4 @@
-var mymap = L.map('mapid').setView([42.442, -108.46], 4);
+var myMap = L.map('mapid').setView([42.442, -108.46], 4);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution:
@@ -8,7 +8,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   tileSize: 512,
   zoomOffset: -1,
   accessToken: 'pk.eyJ1IjoiYm9qbzE5ODAiLCJhIjoiY2tmZTF1YTZ3MDBvejJ1cXZ5MnRsMmFlbyJ9.Oj8H9UBmf69qLHjmT2RlJw'
-}).addTo(mymap);
+}).addTo(myMap);
 
 let m1 = {
   coordinates: [42.442, -108.468],
@@ -20,10 +20,20 @@ let m2 = {
   text: 'This is 2'
 };
 
+let allMarks = [m1, m2];
+
+allMarks.forEach(element => {
+  let mark = L.marker(element.coordinates)
+    .addTo(myMap)
+    .bindPopup(element.text);
+});
+
+/*
 var mark = L.marker(m1.coordinates)
-  .addTo(mymap)
+  .addTo(myMap)
   .bindPopup(m1.text);
 
 var mark2 = L.marker(m2.coordinates)
-  .addTo(mymap)
+  .addTo(myMap)
   .bindPopup(m2.text);
+  */
