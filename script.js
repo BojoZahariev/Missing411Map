@@ -27,7 +27,7 @@ let allMarks = [m1, m2];
 allMarks.forEach(element => {
   let mark = L.marker(element.coordinates)
     .addTo(myMap)
-    .bindPopup(element.name + '<br>' + 'Age: ' + element.age);
+    .bindPopup(`${element.name} <br> Age: ${element.age}`);
 });
 
 /*
