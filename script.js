@@ -12,12 +12,14 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 let m1 = {
   coordinates: [42.442, -108.468],
-  text: 'This is 1'
+  name: 'John Smith',
+  age: '32'
 };
 
 let m2 = {
   coordinates: [38.57, -96.71],
-  text: 'This is 2'
+  name: 'Jane Dow',
+  age: '12'
 };
 
 let allMarks = [m1, m2];
@@ -25,7 +27,7 @@ let allMarks = [m1, m2];
 allMarks.forEach(element => {
   let mark = L.marker(element.coordinates)
     .addTo(myMap)
-    .bindPopup(element.text);
+    .bindPopup(element.name + '<br>' + 'Age: ' + element.age);
 });
 
 /*
