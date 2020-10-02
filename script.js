@@ -1,4 +1,5 @@
 var myMap = L.map('mapid').setView([42.442, -108.46], 4);
+const testBtn = document.querySelector('#testBtn');
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution:
@@ -28,6 +29,10 @@ allMarks.forEach(element => {
   let mark = L.marker(element.coordinates)
     .addTo(myMap)
     .bindPopup(`${element.name} <br> Age: ${element.age}`);
+});
+
+testBtn.addEventListener('click', () => {
+  myMap.setView([42.442, -108.46], 8);
 });
 
 /*
