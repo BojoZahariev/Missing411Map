@@ -32,7 +32,7 @@ allMarks.forEach(element => {
 });
 
 testBtn.addEventListener('click', () => {
-  myMap.setView([42.442, -108.46], 8);
+  myMap.setView(m1.coordinates, 8);
 });
 
 /*
